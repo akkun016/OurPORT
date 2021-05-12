@@ -8,7 +8,46 @@ header {
 
 main {
   .main-visual {
-
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      path.st0 {
+        fill: none;
+        stroke: #0D0D0D;
+        stroke-width: 20;
+        animation: fill-black 1s ease-in 2.6s forwards;
+      }
+      @keyframes fill-black {
+        0% {
+          fill: #ffffff;
+        }
+        100% {
+          fill: #0D0D0D;
+        }
+      }
+    }
+    .mouth-icon {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: icon-fadeIn .8s ease 3.8s both;
+    }
+    @keyframes icon-fadeIn {
+      0% {
+        transform: translate(-50%, 30%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(-50%);
+        opacity: 1;
+      }
+    }
   }
 
   .about-block {
