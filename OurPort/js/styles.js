@@ -13,4 +13,19 @@ $(function(){
       });
   }
   anime();
+
+  setTimeout(() => {
+    $("body").css("overflow", "scroll");
+  }, 5500);
+
+  $(window).on("scroll", function() {
+    const logo = $(".main-visual__inner");
+    logo.toggleClass("sticky", window.scrollY > 0);
+
+    const nav = $("nav");
+    nav.toggleClass("sticky", window.scrollY > 0);
+
+    const icon = $(".mouth-icon > svg");
+    icon.toggleClass("sticky", window.scrollY > 0);
+  })
 });

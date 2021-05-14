@@ -22,6 +22,7 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
   box-sizing: border-box;
+  font-family: 'Trebuchet MS';
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -53,6 +54,10 @@ table {
   border-spacing: 0;
 }
 
+body {
+  overflow: hidden;
+}
+
 .wrapper {
   box-sizing: border-box;
 }
@@ -68,24 +73,23 @@ button {
 
 header {
   width: 100vw;
-  padding: 20px 80px;
   position: fixed;
-  display: flex;
   z-index: 10;
-  justify-content: space-between;
 }
 
-header .header-logo {
-  font-size: 28px;
-  font-weight: bolder;
-  color: #0D0D0D;
-  -webkit-text-stroke: 1px #ffffff;
-  margin-top: 8px;
+header nav {
+  position: absolute;
+  top: 20px;
+  right: 8%;
+  transform: translateX(60px);
+  transition: .8s;
+  opacity: 0;
 }
 
 header nav .menu-button {
   height: 50px;
   width: 50px;
+  background-color: #ffffff;
   border: 1px solid #0D0D0D;
   border-radius: 50%;
   display: block;
@@ -122,6 +126,11 @@ header nav ul.header-menus {
   display: none;
 }
 
+header nav.sticky {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 main {
   height: 200vh;
 }
@@ -132,14 +141,28 @@ main .main-visual {
   position: relative;
 }
 
-main .main-visual .container {
-  position: absolute;
+main .main-visual__inner {
+  height: 28%;
+  width: 78%;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 10;
+  transition: 1s;
 }
 
-main .main-visual .container path.st0 {
+main .main-visual__inner .container {
+  height: 100%;
+  width: 100%;
+}
+
+main .main-visual__inner .container .svg-icon {
+  height: 100%;
+  width: 100%;
+}
+
+main .main-visual__inner .container path.st0 {
   fill: none;
   stroke: #0D0D0D;
   stroke-width: 20;
@@ -155,12 +178,33 @@ main .main-visual .container path.st0 {
   }
 }
 
+main .main-visual__inner.sticky {
+  height: 60px;
+  width: 164px;
+  top: 40px;
+  left: 10%;
+  transform: translate(0, -50%);
+}
+
+main .main-visual__inner.sticky path.st0 {
+  stroke: #ffffff;
+  stroke: 40;
+}
+
 main .main-visual .mouth-icon {
   position: absolute;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   animation: icon-fadeIn .8s ease 3.8s both;
+}
+
+main .main-visual .mouth-icon svg {
+  transition: .4s;
+}
+
+main .main-visual .mouth-icon svg.sticky {
+  opacity: 0;
 }
 
 @keyframes icon-fadeIn {
