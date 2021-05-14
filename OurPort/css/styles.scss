@@ -2,6 +2,10 @@
 @import "reset";
 @import "color";
 
+body {
+  overflow: hidden;
+}
+
 // ラッパーの設定
 .wrapper {
   box-sizing: border-box;
@@ -19,23 +23,20 @@ button{
 
 header {
   width: 100vw;
-  padding: 20px 80px;
   position: fixed;
-  display: flex;
   z-index: 10;
-  justify-content: space-between;
-  .header-logo {
-    font-size: 28px;
-    font-weight: bolder;
-    color: #0D0D0D;
-    -webkit-text-stroke: 1px #ffffff;
-    margin-top: 8px;
-  }
   nav {
+    position: absolute;
+    top: 20px;
+    right: 8%;
+    transform: translateX(60px);
+    transition: .8s;
+    opacity: 0;
     .menu-button {
       height: 50px;
       width: 50px;
-      border: 1px solid #0D0D0D;
+      background-color: $base-color;
+      border: 1px solid $main-color;
       border-radius: 50%;
       display: block;
       position: relative;
@@ -43,7 +44,7 @@ header {
       span {
         height: 1px;
         width: 30px;
-        background-color: #0D0D0D;
+        background-color: $main-color;
         display: inline-block;
       }
       .span1 {
@@ -66,32 +67,60 @@ header {
       display: none;
     }
   }
+  nav.sticky {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 main {
+  // 仮置きのheight
   height: 200vh;
   .main-visual {
     height: 100vh;
     width: 100vw;
     position: relative;
-    .container {
-      position: absolute;
+    &__inner {
+      height: 28%;
+      width: 78%;
+      position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      path.st0 {
-        fill: none;
-        stroke: #0D0D0D;
-        stroke-width: 20;
-        animation: fill-black 1s ease-in 2.6s forwards;
+      z-index: 10;
+      transition: 1s;
+      .container {
+        height: 100%;
+        width: 100%;
+        .svg-icon {
+          height: 100%;
+          width: 100%;
+        }
+        path.st0 {
+          fill: none;
+          stroke: $main-color;
+          stroke-width: 20;
+          animation: fill-black 1s ease-in 2.6s forwards;
+        }
+        @keyframes fill-black {
+          0% {
+            fill: $base-color;
+          }
+          100% {
+            fill: $main-color;
+          }
+        }
       }
-      @keyframes fill-black {
-        0% {
-          fill: #ffffff;
-        }
-        100% {
-          fill: #0D0D0D;
-        }
+    }
+    &__inner.sticky {
+      height: 60px;
+      width: 164px;
+      top: 40px;
+      left: 10%;
+      transform: translate(0, -50%);
+      path.st0 {
+        stroke: $base-color;
+        stroke: 40;
       }
     }
     .mouth-icon {
@@ -100,6 +129,12 @@ main {
       left: 50%;
       transform: translateX(-50%);
       animation: icon-fadeIn .8s ease 3.8s both;
+      svg {
+        transition: .4s;
+      }
+      svg.sticky {
+        opacity: 0;
+      }
     }
     @keyframes icon-fadeIn {
       0% {
