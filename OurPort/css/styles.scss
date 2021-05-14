@@ -134,6 +134,7 @@ main {
       }
       svg.sticky {
         opacity: 0;
+        transform: translate(-50%, 30%);
       }
     }
     @keyframes icon-fadeIn {
