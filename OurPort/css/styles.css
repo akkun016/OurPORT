@@ -216,6 +216,32 @@ main .main-visual .mouth-icon svg.sticky {
   }
 }
 
+main .about-block {
+  height: 100Vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main .about-block .title {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+main .about-block .line {
+  height: 5px;
+  width: 160px;
+  background-color: black;
+  margin-bottom: 40px;
+}
+
+main .about-block p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
 main .contents-block {
   width: 100vw;
   padding: 100px 6%;
