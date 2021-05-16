@@ -176,7 +176,6 @@ main .main-visual__inner .container path.st0 {
 }
 
 main .main-visual__inner.sticky {
-  will-change: transform;
   transform: translate(-50%, -50%) scale(0.2);
   top: 50px;
   left: 12%;
