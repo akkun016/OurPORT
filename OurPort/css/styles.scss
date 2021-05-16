@@ -3,7 +3,7 @@
 @import "color";
 
 body {
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 // ラッパーの設定
@@ -120,7 +120,7 @@ main {
       transform: translate(0, -50%);
       path.st0 {
         stroke: $base-color;
-        stroke: 40;
+        stroke-width: 40;
       }
     }
     .mouth-icon {
@@ -173,7 +173,87 @@ main {
   }
 
   .contents-block {
-
+    width: 100vw;
+    padding: 100px 6%;
+    h2.heading-title {
+      height: 120px;
+      width: 100%;
+      background-color: gray;
+      margin-bottom: 100px;
+    }
+    article.content-flexbox {
+      height: 500px;
+      width: 100%;
+      display: flex;
+      margin-top: 120px;
+      a {
+        height: 100%;
+        width: 62.5%;
+        .content-image {
+          height: 100%;
+          width: 100%;
+          border: solid 1px $main-color;
+          object-fit: cover;
+        }
+      }
+      .content-texts {
+        width: 37.5%;
+        padding: 230px 50px 0 50px;
+        h3.content-title {
+          font-size: 44px;
+          letter-spacing: 4px;
+        }
+        h3.content-title::before {
+          content: "";
+          height: 44px;
+          width: 3px;
+          background-color: $main-color;
+          display: inline-block;
+          margin-right: 10px;
+          transform: translateY(4px);
+        }
+        p {
+          font-size: 16px;
+          margin-top: 20px;
+          line-height: 32px;
+        }
+        .item-link-buttom {
+          height: 60px;
+          width: 280px;
+          background-color: $main-color;
+          text-align: center;
+          margin-top: 20px;
+          position: relative;
+          a#item-link {
+            height: 100%;
+            width: 100%;
+            font-size: 22px;
+            text-decoration: none;
+            color: $base-color;
+            display: inline-block;
+            line-height: 60px;
+            padding-right: 16px;
+          }
+          span {
+            height: 18px;
+            width: 18px;
+            display: inline-block;
+            border-top: solid 3px $base-color;
+            border-right: solid 3px $base-color;
+            transform: rotate(45deg) translateY(-60%);
+            position: absolute;
+            top: 50%;
+            right: 66px;
+          }
+        }
+      }
+    }
+    article.content-flexbox:first-child {
+      margin-top: 0;
+    }
+    article.content-flexbox:nth-of-type(2n) {
+      flex-direction: row-reverse;
+    }
   }
 
   .skills-block {
