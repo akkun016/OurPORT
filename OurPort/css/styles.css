@@ -176,11 +176,10 @@ main .main-visual__inner .container path.st0 {
 }
 
 main .main-visual__inner.sticky {
-  height: 60px;
-  width: 164px;
-  top: 40px;
-  left: 10%;
-  transform: translate(0, -50%);
+  will-change: transform;
+  transform: translate(-50%, -50%) scale(0.2);
+  top: 50px;
+  left: 12%;
 }
 
 main .main-visual__inner.sticky path.st0 {
