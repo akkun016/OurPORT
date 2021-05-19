@@ -23,6 +23,7 @@ time, mark, audio, video {
   vertical-align: baseline;
   box-sizing: border-box;
   font-family: 'Trebuchet MS';
+  color: #0D0D0D;
 }
 
 /* HTML5 display-role reset for older browsers */

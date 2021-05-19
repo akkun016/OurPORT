@@ -23,6 +23,7 @@ time, mark, audio, video {
   vertical-align: baseline;
   box-sizing: border-box;
   font-family: 'Trebuchet MS';
+  color: #0D0D0D;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -127,10 +128,6 @@ header nav.sticky {
   opacity: 1;
 }
 
-main {
-  height: 200vh;
-}
-
 main .main-visual {
   height: 100vh;
   width: 100vw;
@@ -175,16 +172,14 @@ main .main-visual__inner .container path.st0 {
 }
 
 main .main-visual__inner.sticky {
-  height: 60px;
-  width: 164px;
-  top: 40px;
-  left: 10%;
-  transform: translate(0, -50%);
+  transform: translate(-50%, -50%) scale(0.2);
+  top: 50px;
+  left: 12%;
 }
 
 main .main-visual__inner.sticky path.st0 {
   stroke: #ffffff;
-  stroke: 40;
+  stroke-width: 40;
 }
 
 main .main-visual .mouth-icon {
@@ -225,20 +220,118 @@ main .about-block {
 }
 
 main .about-block .title {
-  font-size: 40px;
-  margin-bottom: 5px;
+  font-size: 60px;
+  margin-bottom: 4px;
 }
 
 main .about-block .line {
   height: 5px;
-  width: 160px;
+  width: 200px;
   background-color: black;
   margin-bottom: 40px;
 }
 
 main .about-block p {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 20px;
+  font-family: 'Hiragino Kaku Gothic ProN';
+}
+
+main .contents-block {
+  width: 100vw;
+  padding: 100px 6%;
+}
+
+main .contents-block h2.heading-title {
+  height: 120px;
+  width: 100%;
+  background-color: gray;
+  margin-bottom: 100px;
+}
+
+main .contents-block article.content-flexbox {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  margin-top: 120px;
+}
+
+main .contents-block article.content-flexbox a {
+  height: 100%;
+  width: 62.5%;
+}
+
+main .contents-block article.content-flexbox a .content-image {
+  height: 100%;
+  width: 100%;
+  border: solid 1px #0D0D0D;
+  object-fit: cover;
+}
+
+main .contents-block article.content-flexbox .content-texts {
+  width: 37.5%;
+  padding: 230px 50px 0 50px;
+}
+
+main .contents-block article.content-flexbox .content-texts h3.content-title {
+  font-size: 44px;
+  letter-spacing: 4px;
+}
+
+main .contents-block article.content-flexbox .content-texts h3.content-title::before {
+  content: "";
+  height: 44px;
+  width: 3px;
+  background-color: #0D0D0D;
+  display: inline-block;
+  margin-right: 10px;
+  transform: translateY(4px);
+}
+
+main .contents-block article.content-flexbox .content-texts p {
+  font-size: 16px;
+  margin-top: 20px;
+  line-height: 32px;
+}
+
+main .contents-block article.content-flexbox .content-texts .item-link-buttom {
+  height: 60px;
+  width: 280px;
+  background-color: #0D0D0D;
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+main .contents-block article.content-flexbox .content-texts .item-link-buttom a#item-link {
+  height: 100%;
+  width: 100%;
+  font-size: 22px;
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-block;
+  line-height: 60px;
+  padding-right: 16px;
+}
+
+main .contents-block article.content-flexbox .content-texts .item-link-buttom span {
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  border-top: solid 3px #ffffff;
+  border-right: solid 3px #ffffff;
+  transform: rotate(45deg) translateY(-60%);
+  position: absolute;
+  top: 50%;
+  right: 66px;
+}
+
+main .contents-block article.content-flexbox:first-child {
+  margin-top: 0;
+}
+
+main .contents-block article.content-flexbox:nth-of-type(2n) {
+  flex-direction: row-reverse;
 }
 
 main .member-block {
