@@ -3,7 +3,7 @@
 @import "color";
 
 body {
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 // ラッパーの設定
@@ -167,6 +167,50 @@ main {
       margin-bottom: 20px;
       font-family: 'Hiragino Kaku Gothic ProN';
     }
+  }
+  .member-block{
+    height: 100Vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:black;
+    .titlebox{
+      display: flex;
+      justify-content: center;
+      padding: 100px 0px;
+      .title{
+        text-align: center;
+        color: #ffffff;
+        font-size: 60px;
+        padding:4px;
+        border-bottom:$base-color solid 4px ;
+      }
+    }
+    .people{
+      color:#ffffff;
+      display: flex;
+      justify-content: space-evenly;
+      padding-top: 50px;
+      figcaption{
+        width: 400PX;
+      }
+    }
+
+      h3{
+        font-size: 40px;
+        letter-spacing: 0.06em;
+        border-left:$base-color solid 4px ;
+        padding: 6px;
+      }
+      p{
+        font-size: 20px;
+        padding-top: 40px;
+        line-height: 60px;
+      }
+      .under{
+        text-decoration: underline;
+      }
   }
 
   .contents-block {
