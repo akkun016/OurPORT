@@ -2,29 +2,55 @@
 @import "reset";
 @import "color";
 
-body {
-  overflow: hidden;
-}
-
 // ラッパーの設定
 .wrapper {
   box-sizing: border-box;
+  background-color: #ffffff;
 }
 
 // ボタンのリセット
 button{
   background-color: transparent;
   border: none;
-  cursor: pointer;
   outline: none;
   padding: 0;
   appearance: none;
+}
+
+// サブタイトル
+.subtitle-box{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 140px;
+  h2.subtitle {
+    font-size: 60px;
+    padding: 4px;
+    transform: translateX(20px);
+    border-bottom: solid 5px $main-color;
+  }
 }
 
 header {
   width: 100vw;
   position: fixed;
   z-index: 10;
+  h2.header-title {
+    color: $main-color;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    -webkit-text-stroke: 1px $base-color;
+    position: absolute;
+    top: 28px;
+    left: 8%;
+    transition: .8s;
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  h2.header-title.sticky {
+    transform: translateX(0);
+    opacity: 1;
+  }
   nav {
     position: absolute;
     top: 20px;
@@ -78,45 +104,29 @@ main {
     height: 100vh;
     width: 100vw;
     position: relative;
-    &__inner {
-      height: 28%;
-      width: 78%;
-      position: fixed;
+    .container {
+      width: 60%;
+      position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-      transition: 1s;
-      .container {
+      transform: translate(-50%,-50%);
+      .svg-icon {
         height: 100%;
         width: 100%;
-        .svg-icon {
-          height: 100%;
-          width: 100%;
-        }
-        path.st0 {
-          fill: none;
-          stroke: $main-color;
-          stroke-width: 20;
-          animation: fill-black 1s ease-in 2.6s forwards;
-        }
-        @keyframes fill-black {
-          0% {
-            fill: $base-color;
-          }
-          100% {
-            fill: $main-color;
-          }
-        }
       }
-    }
-    &__inner.sticky {
-      transform: translate(-50%, -50%) scale(0.2);
-      top: 50px;
-      left: 12%;
       path.st0 {
-        stroke: $base-color;
-        stroke-width: 40;
+        fill: none;
+        stroke: $main-color;
+        stroke-width: 20;
+        animation: fill-black 1s ease-in 2.6s forwards;
+      }
+      @keyframes fill-black {
+        0% {
+          fill: $base-color;
+        }
+        100% {
+          fill: $main-color;
+        }
       }
     }
     .mouth-icon {
@@ -130,7 +140,6 @@ main {
       }
       svg.sticky {
         opacity: 0;
-        transform: translate(-50%, 30%);
       }
     }
     @keyframes icon-fadeIn {
@@ -172,92 +181,196 @@ main {
   .contents-block {
     width: 100vw;
     padding: 100px 6%;
-    h2.heading-title {
-      height: 120px;
-      width: 100%;
-      background-color: gray;
-      margin-bottom: 100px;
-    }
-    article.content-flexbox {
+    article.content-inner {
       height: 500px;
       width: 100%;
-      display: flex;
       margin-top: 120px;
-      a {
+      .content-flexbox {
         height: 100%;
-        width: 62.5%;
-        .content-image {
+        width: 100%;
+        display: none;
+        a.image-link {
           height: 100%;
-          width: 100%;
-          border: solid 1px $main-color;
-          object-fit: cover;
-        }
-      }
-      .content-texts {
-        width: 37.5%;
-        padding: 230px 50px 0 50px;
-        h3.content-title {
-          font-size: 44px;
-          letter-spacing: 4px;
-        }
-        h3.content-title::before {
-          content: "";
-          height: 44px;
-          width: 3px;
-          background-color: $main-color;
-          display: inline-block;
-          margin-right: 10px;
-          transform: translateY(4px);
-        }
-        p {
-          font-size: 16px;
-          margin-top: 20px;
-          line-height: 32px;
-        }
-        .item-link-buttom {
-          height: 60px;
-          width: 280px;
-          background-color: $main-color;
-          text-align: center;
-          margin-top: 20px;
+          width: 62.5%;
+          overflow: hidden;
           position: relative;
-          a#item-link {
+          animation: border-add .1s ease 1s both;
+          @keyframes border-add {
+            100% {
+              border: solid 1px $main-color;
+            }
+          }
+          .content-image {
             height: 100%;
             width: 100%;
-            font-size: 22px;
-            text-decoration: none;
-            color: $base-color;
-            display: inline-block;
-            line-height: 60px;
-            padding-right: 16px;
+            object-fit: cover;
+            opacity: 0;
+            transition: 1s;
+            animation: fadeIn-image .1s ease .9s both;
           }
-          span {
-            height: 18px;
-            width: 18px;
+          @keyframes fadeIn-image {
+            100% {
+              opacity: 1;
+            }
+          }
+        }
+        .image-link:hover {
+          .content-image {
+            transform: scale(1.06);
+          }
+        }
+        .content-texts {
+          width: 37.5%;
+          padding: 230px 50px 0 50px;
+          h3.content-title {
+            font-size: 44px;
+            letter-spacing: 4px;
+            animation: fadeIn-texts .6s ease both;
+          }
+          h3.content-title::before {
+            content: "";
+            height: 44px;
+            width: 3px;
+            background-color: $main-color;
             display: inline-block;
-            border-top: solid 3px $base-color;
-            border-right: solid 3px $base-color;
-            transform: rotate(45deg) translateY(-60%);
+            margin-right: 10px;
+            transform: translateY(4px);
+          }
+          p.content-text {
+            font-size: 16px;
+            margin-top: 20px;
+            line-height: 32px;
+            animation: fadeIn-texts .6s ease .4s both;
+          }
+          .item-link-buttom {
+            height: 60px;
+            width: 280px;
+            border: solid 2px $base-color;
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            mix-blend-mode: difference;
+            animation: fadeIn-texts .6s ease .8s both;
+            a#item-link {
+              height: 100%;
+              width: 100%;
+              font-size: 22px;
+              text-decoration: none;
+              color: $base-color;
+              display: inline-block;
+              line-height: 60px;
+              padding-right: 16px;
+              transition: .4s;
+              transition-delay: .2s;
+              position: relative;
+              z-index: 2;
+              mix-blend-mode: difference;
+            }
+            span {
+              height: 18px;
+              width: 18px;
+              display: inline-block;
+              border-top: solid 3px $base-color;
+              border-right: solid 3px $base-color;
+              transform: rotate(45deg) translateY(-60%);
+              transition: .4s;
+              transition-delay: .2s;
+              position: absolute;
+              top: 50%;
+              right: 66px;
+              z-index: 2;
+              mix-blend-mode: difference;
+            }
+          }
+          .item-link-buttom::before {
+            content: "";
+            height: 120%;
+            width: 120%;
+            background-color: $base-color;
             position: absolute;
-            top: 50%;
-            right: 66px;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transform-origin: right top;
+            transform: skewX(-30deg) scale(0, 1);
+            transition: .8s;
+          }
+          .item-link-buttom:hover::before {
+            transform: skewX(-30deg) scale(1, 1);
           }
         }
       }
     }
-    article.content-flexbox:first-child {
+    article.content-inner:first-child {
       margin-top: 0;
     }
-    article.content-flexbox:nth-of-type(2n) {
+    article.content-inner:nth-of-type(2n) > .content-flexbox {
       flex-direction: row-reverse;
     }
   }
 
   .skills-block {
-
   }
 }
 
 footer {
+}
 
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  z-index: 999;
+  transition: .1s;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+// フェードインアニメーション
+.fadeIn-black-back {
+  height: 100%;
+  width: 100%;
+  background-color: $main-color;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  animation: fadeIn-contents 2s ease both;
+}
+
+// 左から表示、右へ非表示
+@keyframes fadeIn-contents {
+  0% {
+    transform: scale(0,1);
+    transform-origin: left;
+  }
+  40% {
+    transform: scale(1,1);
+    transform-origin: left;
+  }
+  50% {
+    transform: scale(1,1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scale(0,1);
+    transform-origin: right;
+  }
+}
+// テキストの表示
+@keyframes fadeIn-texts {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
