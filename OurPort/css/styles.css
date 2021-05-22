@@ -249,6 +249,57 @@ main .about-block p {
   font-family: 'Hiragino Kaku Gothic ProN';
 }
 
+main .member-block {
+  height: 100Vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+}
+
+main .member-block .titlebox {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0px;
+}
+
+main .member-block .titlebox .title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 60px;
+  padding: 4px;
+  border-bottom: #ffffff solid 4px;
+}
+
+main .member-block .people {
+  color: #ffffff;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 50px;
+}
+
+main .member-block .people figcaption {
+  width: 400PX;
+}
+
+main .member-block h3 {
+  font-size: 40px;
+  letter-spacing: 0.06em;
+  border-left: #ffffff solid 4px;
+  padding: 6px;
+}
+
+main .member-block p {
+  font-size: 20px;
+  padding-top: 40px;
+  line-height: 60px;
+}
+
+main .member-block .under {
+  text-decoration: underline;
+}
+
 main .contents-block {
   width: 100vw;
   padding: 100px 6%;
