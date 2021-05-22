@@ -258,13 +258,13 @@ main .member-block {
   background-color: black;
 }
 
-main .member-block .titlebox {
+main .member-block .member-titlebox {
   display: flex;
   justify-content: center;
   padding: 100px 0px;
 }
 
-main .member-block .titlebox .title {
+main .member-block .member-titlebox .member-title {
   text-align: center;
   color: #ffffff;
   font-size: 60px;
@@ -273,7 +273,6 @@ main .member-block .titlebox .title {
 }
 
 main .member-block .people {
-  color: #ffffff;
   display: flex;
   justify-content: space-evenly;
   padding-top: 50px;
@@ -283,14 +282,16 @@ main .member-block .people figcaption {
   width: 400PX;
 }
 
-main .member-block h3 {
+main .member-block .member-name {
+  color: #ffffff;
   font-size: 40px;
   letter-spacing: 0.06em;
   border-left: #ffffff solid 4px;
   padding: 6px;
 }
 
-main .member-block p {
+main .member-block .member-sentense {
+  color: #ffffff;
   font-size: 20px;
   padding-top: 40px;
   line-height: 60px;
@@ -298,6 +299,7 @@ main .member-block p {
 
 main .member-block .under {
   text-decoration: underline;
+  color: #ffffff;
 }
 
 main .contents-block {

@@ -184,11 +184,11 @@ main {
     align-items: center;
     flex-direction: column;
     background-color:black;
-    .titlebox{
+    .member-titlebox{
       display: flex;
       justify-content: center;
       padding: 100px 0px;
-      .title{
+      .member-title{
         text-align: center;
         color: #ffffff;
         font-size: 60px;
@@ -197,7 +197,6 @@ main {
       }
     }
     .people{
-      color:#ffffff;
       display: flex;
       justify-content: space-evenly;
       padding-top: 50px;
@@ -205,20 +204,22 @@ main {
         width: 400PX;
       }
     }
-
-      h3{
+      .member-name{
+        color:#ffffff;
         font-size: 40px;
         letter-spacing: 0.06em;
         border-left:$base-color solid 4px ;
         padding: 6px;
       }
-      p{
+      .member-sentense{
+        color:#ffffff;
         font-size: 20px;
         padding-top: 40px;
         line-height: 60px;
       }
       .under{
         text-decoration: underline;
+        color: #ffffff;
       }
   }
 
@@ -355,6 +356,41 @@ main {
     }
   }
   .skills-block {
+    height: 100Vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    .skills-titlebox{
+      display: flex;
+      justify-content: center;
+      padding: 100px 0px 90px 0px;
+      flex-direction: column;
+      align-items: center;
+      .skills-title{
+        text-align: center;
+        font-size: 70px;
+        padding:4px;
+      }
+      .skills-line{
+        height: 5px;
+        width: 250px;
+        background-color: black;
+        margin-bottom: 40px;
+      }
+    }
+    .skills{
+      padding-left: 400px;
+      .skills-type{
+        font-size: 45px;
+        border-left:black solid 2px ;
+        padding: 6px;
+      }
+      .skills-name{
+        font-size: 35px;
+        padding: 10px 0px 100px 0px;
+        line-height: 60px;
+      }
+    }
   }
 }
 
