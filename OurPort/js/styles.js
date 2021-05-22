@@ -42,13 +42,13 @@ $(function(){
   const icon = $(".mouth-icon > svg");
 
   const contentBlocks = document.querySelectorAll(".content-inner");
-  const contentsHeight = document.querySelectorAll(".content-inner").length * 500 + 1300;
+  const contentsHeight = document.querySelectorAll(".content-inner").length * 500 + 2200;
   $(window).on("scroll", function() {
     logo.toggleClass("sticky", window.scrollY > 0)
     nav.toggleClass("sticky", window.scrollY > 0);
     icon.toggleClass("sticky", window.scrollY > 0);
 
-    if (window.scrollY > 1300 && window.scrollY < contentsHeight) {
+    if (window.scrollY > 2200 && window.scrollY < contentsHeight) {
       for (let i = 0; i < contentBlocks.length; i++) {
         const contentPosition = contentBlocks[i].getBoundingClientRect().top;
         if (window.innerHeight - 300 > contentPosition) {
