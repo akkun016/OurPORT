@@ -2,8 +2,8 @@ $(function(){
   // マウスカーソルのエフェクト
   let cursor = $(".cursor");
   $(document).on("mousemove", function(e) {
-    let mousemove_left = e.screenX - 8;
-    let mousemove_top = e.screenY - 120;
+    let mousemove_left = e.clientX - 8;
+    let mousemove_top = e.clientY - 8;
 
     cursor.css({"transform":`translate(${mousemove_left + "px"}, ${mousemove_top + "px"})`, "opacity": "1"});
   });

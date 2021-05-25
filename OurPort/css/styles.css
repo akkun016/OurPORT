@@ -204,6 +204,8 @@ main .main-visual .mouth-icon {
 }
 
 main .main-visual .mouth-icon svg {
+  width: 5vw;
+  height: 12vh;
   transition: .4s;
 }
 
