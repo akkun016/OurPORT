@@ -8,13 +8,7 @@ $(function(){
     cursor.css({"transform":`translate(${mousemove_left + "px"}, ${mousemove_top + "px"})`, "opacity": "1"});
   });
 
-  $("a").hover(function(){
-    cursor.css({"height":"80px", "width":"80px", "top":"-30px", "left":"-30px"})
-  }, function(){
-    cursor.css({"height":"16px", "width":"16px", "top":"0", "left":"0"})
-  });
-
-  $("label").hover(function(){
+  $("a, label, button, .container").hover(function() {
     cursor.css({"height":"80px", "width":"80px", "top":"-30px", "left":"-30px"})
   }, function(){
     cursor.css({"height":"16px", "width":"16px", "top":"0", "left":"0"})
@@ -56,5 +50,29 @@ $(function(){
         }
       }
     }
+  })
+
+  // ヘッダーメニュー
+  const parentClass = $(".menu-button");
+  const menuLists = $(".header-menus");
+  $("#menu-button-id").on("click", function() {
+    if (parentClass.hasClass("clicked") == true) {
+      parentClass.removeClass("clicked");
+      menuLists.css("transform", "translateX(260px)")
+    } else {
+      parentClass.addClass("clicked");
+      menuLists.css("transform", "translateX(0)")
+    };
+  })
+
+  $('a[href^="#"]').click(function() {
+    let speed = 500;
+    let href = $(this).attr("href");
+    let target = $(href == "#" || href == "" ? 'html' : href);
+    let position = target.offset().top;
+    $("html, body").animate({scrollTop: position}, speed, "swing");
+
+    parentClass.removeClass("clicked");
+    menuLists.css("transform", "translateX(260px)")
   })
 });

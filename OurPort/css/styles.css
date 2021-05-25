@@ -106,6 +106,17 @@ header h2.header-title.sticky {
   opacity: 1;
 }
 
+header .cover-block {
+  position: absolute;
+  top: 20px;
+  right: 8%;
+  transform: translateX(60px);
+  z-index: 8;
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+}
+
 header nav {
   position: absolute;
   top: 20px;
@@ -124,6 +135,7 @@ header nav .menu-button {
   display: block;
   position: relative;
   cursor: pointer;
+  z-index: 5;
 }
 
 header nav .menu-button span {
@@ -137,22 +149,71 @@ header nav .menu-button .span1 {
   position: absolute;
   top: 15px;
   left: 10px;
+  transition: 1s;
 }
 
 header nav .menu-button .span2 {
   position: absolute;
   top: 24px;
   left: 10px;
+  transition: 1s;
 }
 
 header nav .menu-button .span3 {
   position: absolute;
   top: 33px;
   left: 10px;
+  transition: 1s;
+}
+
+header nav .menu-button.clicked .span1 {
+  transform: rotate(45deg) translate(6px, 7px);
+}
+
+header nav .menu-button.clicked .span2 {
+  transform: translateX(6px);
+  opacity: 0;
+}
+
+header nav .menu-button.clicked .span3 {
+  transform: rotate(-45deg) translate(6px, -7px);
 }
 
 header nav ul.header-menus {
-  display: none;
+  height: 120vh;
+  width: 300px;
+  background-color: #0D0D0D;
+  position: fixed;
+  z-index: 3;
+  top: -20px;
+  right: -200px;
+  padding: 80px 0 0 60px;
+  transform: translateX(260px);
+  transition: 1s;
+}
+
+header nav ul.header-menus li {
+  margin-top: 36px;
+}
+
+header nav ul.header-menus li a {
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+header nav ul.header-menus li a .bottom-line {
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  transition: .6s;
+  transform: scale(0, 1);
+}
+
+header nav ul.header-menus li a:hover .bottom-line {
+  transform: scale(1, 1);
 }
 
 header nav.sticky {
@@ -252,7 +313,6 @@ main .about-block p {
 }
 
 main .member-block {
-  height: 100Vh;
   width: 100vw;
   justify-content: center;
   align-items: center;
@@ -277,7 +337,7 @@ main .member-block .member-titlebox .member-title {
 main .member-block .people {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 main .member-block .people figcaption {
@@ -294,7 +354,7 @@ main .member-block .member-name {
 
 main .member-block .member-sentense {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 16px;
   padding-top: 40px;
   line-height: 60px;
 }
@@ -477,7 +537,7 @@ main .skills-block .skills-titlebox .skills-title {
 main .skills-block .skills-titlebox .skills-line {
   height: 5px;
   width: 250px;
-  background-color: black;
+  background-color: #0D0D0D;
   margin-bottom: 40px;
 }
 
@@ -487,7 +547,7 @@ main .skills-block .skills {
 
 main .skills-block .skills .skills-type {
   font-size: 45px;
-  border-left: black solid 2px;
+  border-left: #0D0D0D solid 4px;
   padding: 6px;
 }
 
