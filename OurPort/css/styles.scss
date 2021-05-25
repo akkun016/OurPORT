@@ -51,6 +51,16 @@ header {
     transform: translateX(0);
     opacity: 1;
   }
+  .cover-block {
+    position: absolute;
+    top: 20px;
+    right: 8%;
+    transform: translateX(60px);
+    z-index: 8;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+  }
   nav {
     position: absolute;
     top: 20px;
@@ -67,6 +77,7 @@ header {
       display: block;
       position: relative;
       cursor: pointer;
+      z-index: 5;
       span {
         height: 1px;
         width: 30px;
@@ -77,20 +88,66 @@ header {
         position: absolute;
         top: 15px;
         left: 10px;
+        transition: 1s;
       }
       .span2 {
         position: absolute;
         top: 24px;
         left: 10px;
+        transition: 1s;
       }
       .span3 {
         position: absolute;
         top: 33px;
         left: 10px;
+        transition: 1s;
+      }
+    }
+    .menu-button.clicked {
+      .span1 {
+        transform: rotate(45deg) translate(6px, 7px);
+      }
+      .span2 {
+        transform: translateX(6px);
+        opacity: 0;
+      }
+      .span3 {
+        transform: rotate(-45deg) translate(6px, -7px);
       }
     }
     ul.header-menus {
-      display: none;
+      height: 120vh;
+      width: 300px;
+      background-color: $main-color;
+      position: fixed;
+      z-index: 3;
+      top: -20px;
+      right: -200px;
+      padding: 80px 0 0 60px;
+      transform: translateX(260px);
+      transition: 1s;
+      li {
+        margin-top: 36px;
+        a {
+          font-size: 24px;
+          color: $base-color;
+          cursor: pointer;
+          text-decoration: none;
+          display: inline-block;
+          .bottom-line {
+            height: 2px;
+            width: 100%;
+            background-color: $base-color;
+            transition: .6s;
+            transform: scale(0, 1);
+          }
+        }
+        a:hover {
+          .bottom-line {
+            transform: scale(1, 1);
+          }
+        }
+      }
     }
   }
   nav.sticky {
@@ -180,7 +237,6 @@ main {
     }
   }
   .member-block{
-    height: 100Vh;
     width: 100vw;
     justify-content: center;
     align-items: center;
@@ -201,7 +257,7 @@ main {
     .people{
       display: flex;
       justify-content: space-evenly;
-      padding-top: 50px;
+      padding-bottom: 100px;
       figcaption{
         width: 400PX;
       }
@@ -215,7 +271,7 @@ main {
       }
       .member-sentense{
         color:#ffffff;
-        font-size: 20px;
+        font-size: 16px;
         padding-top: 40px;
         line-height: 60px;
       }
@@ -376,7 +432,7 @@ main {
       .skills-line{
         height: 5px;
         width: 250px;
-        background-color: black;
+        background-color: $main-color;
         margin-bottom: 40px;
       }
     }
@@ -384,7 +440,7 @@ main {
       padding-left: 400px;
       .skills-type{
         font-size: 45px;
-        border-left:black solid 2px ;
+        border-left:$main-color solid 4px ;
         padding: 6px;
       }
       .skills-name{
