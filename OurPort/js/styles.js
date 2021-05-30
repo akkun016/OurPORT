@@ -58,10 +58,10 @@ $(function(){
   $("#menu-button-id").on("click", function() {
     if (parentClass.hasClass("clicked") == true) {
       parentClass.removeClass("clicked");
-      menuLists.css("transform", "translateX(260px)")
+      menuLists.css("transform", "translateX(0)")
     } else {
       parentClass.addClass("clicked");
-      menuLists.css("transform", "translateX(0)")
+      menuLists.css("transform", "translateX(-440px)")
     };
   })
 
