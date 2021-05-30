@@ -567,7 +567,8 @@ main .skills-block .skills-titlebox .skills-line {
 }
 
 main .skills-block .skills {
-  padding-left: 400px;
+  width: 55vw;
+  margin: 0 auto;
 }
 
 main .skills-block .skills .skills-type {
