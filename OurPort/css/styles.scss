@@ -1,7 +1,6 @@
 @charset "utf-8";
 @import "reset";
 @import "color";
-
 // ラッパーの設定
 .wrapper {
   box-sizing: border-box;
@@ -285,16 +284,13 @@ main {
     width: 100vw;
     padding: 100px 6%;
     article.content-inner {
-      height: 60vh;
       width: 100%;
       margin-top: 120px;
       .content-flexbox {
-        height: 100%;
         width: 100%;
         display: none;
         a.image-link {
-          height: 100%;
-          width: 62.5%;
+          height: 50%;
           overflow: hidden;
           position: relative;
           animation: border-add .1s ease 1s both;
@@ -304,7 +300,6 @@ main {
             }
           }
           .content-image {
-            height: 100%;
             width: 100%;
             object-fit: cover;
             opacity: 0;
@@ -323,24 +318,12 @@ main {
           }
         }
         .content-texts {
-          width: 37.5%;
-          padding: 230px 50px 0 50px;
           h3.content-title {
-            font-size: 44px;
-            letter-spacing: 4px;
             animation: fadeIn-texts .6s ease both;
-          }
-          h3.content-title::before {
-            content: "";
-            height: 44px;
-            width: 3px;
-            background-color: $main-color;
-            display: inline-block;
-            margin-right: 10px;
-            transform: translateY(4px);
+            border-left: 3px solid $main-color;
+            padding-left: 10px;
           }
           p.content-text {
-            font-size: 16px;
             margin-top: 20px;
             line-height: 32px;
             animation: fadeIn-texts .6s ease .4s both;
@@ -409,8 +392,55 @@ main {
     article.content-inner:first-child {
       margin-top: 0;
     }
+  }
+  // スクリーンサイズ1001px以上
+  @media screen and (min-width: 1001px) {
+    article.content-inner {
+      height: 60vh;
+      .content-flexbox {
+        a.image-link {
+          width: 62.5%;
+        }
+      }
+      .content-texts {
+        width: 37.5%;
+        padding: 230px 50px 0 50px;
+        h3.content-title {
+          font-size: 44px;
+          letter-spacing: 4px;
+        }
+        p.content-text {
+          font-size: 16px;
+        }
+      }
+    }
     article.content-inner:nth-of-type(2n) > .content-flexbox {
       flex-direction: row-reverse;
+    }
+  }
+    // スクリーンサイズ1001px以上
+  @media screen and (max-width: 1000px) {
+    article.content-inner {
+      height: 70vh;
+      .content-flexbox {
+        flex-direction: column;
+        a.image-link {
+          width: 100%;
+        }
+      }
+      .content-texts {
+        padding: 50px 0;
+        h3.content-title {
+          font-size: 36px;
+          letter-spacing: 3px;
+        }
+        p.content-text {
+          font-size: 14px;
+        }
+      }
+    }
+    article.content-inner:nth-of-type(2n) > .content-flexbox {
+      flex-direction: column;
     }
   }
   .skills-block {

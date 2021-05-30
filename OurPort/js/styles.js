@@ -36,7 +36,7 @@ $(function(){
   const icon = $(".mouth-icon > svg");
 
   const contentBlocks = document.querySelectorAll(".content-inner");
-  const contentsHeight = document.querySelectorAll(".content-inner").length * 500 + 2200;
+  const contentsHeight = document.querySelectorAll(".content-inner").length * 800 + 2200;
   $(window).on("scroll", function() {
     logo.toggleClass("sticky", window.scrollY > 0)
     nav.toggleClass("sticky", window.scrollY > 0);
