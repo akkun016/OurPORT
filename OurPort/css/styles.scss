@@ -3,6 +3,8 @@
 @import "color";
 // ラッパーの設定
 .wrapper {
+  width: 100vw;
+  overflow: hidden;
   box-sizing: border-box;
   background-color: #ffffff;
 }
@@ -444,7 +446,6 @@ main {
     }
   }
   .skills-block {
-    height: 100Vh;
     width: 100vw;
     justify-content: center;
     align-items: center;
