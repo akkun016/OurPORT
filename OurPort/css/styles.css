@@ -56,6 +56,8 @@ table {
 }
 
 .wrapper {
+  width: 100vw;
+  overflow: hidden;
   box-sizing: border-box;
   background-color: #ffffff;
 }
@@ -181,14 +183,14 @@ header nav .menu-button.clicked .span3 {
 
 header nav ul.header-menus {
   height: 120vh;
-  width: 300px;
+  width: 440px;
   background-color: #0D0D0D;
   position: fixed;
   z-index: 3;
   top: -20px;
-  right: -200px;
+  left: 320px;
   padding: 80px 0 0 60px;
-  transform: translateX(260px);
+  transform: translateX(0);
   transition: 1s;
 }
 
@@ -370,20 +372,17 @@ main .contents-block {
 }
 
 main .contents-block article.content-inner {
-  height: 60vh;
   width: 100%;
   margin-top: 120px;
 }
 
 main .contents-block article.content-inner .content-flexbox {
-  height: 100%;
   width: 100%;
   display: none;
 }
 
 main .contents-block article.content-inner .content-flexbox a.image-link {
-  height: 100%;
-  width: 62.5%;
+  height: 50%;
   overflow: hidden;
   position: relative;
   animation: border-add .1s ease 1s both;
@@ -396,7 +395,6 @@ main .contents-block article.content-inner .content-flexbox a.image-link {
 }
 
 main .contents-block article.content-inner .content-flexbox a.image-link .content-image {
-  height: 100%;
   width: 100%;
   object-fit: cover;
   opacity: 0;
@@ -414,29 +412,13 @@ main .contents-block article.content-inner .content-flexbox .image-link:hover .c
   transform: scale(1.06);
 }
 
-main .contents-block article.content-inner .content-flexbox .content-texts {
-  width: 37.5%;
-  padding: 230px 50px 0 50px;
-}
-
 main .contents-block article.content-inner .content-flexbox .content-texts h3.content-title {
-  font-size: 44px;
-  letter-spacing: 4px;
   animation: fadeIn-texts .6s ease both;
-}
-
-main .contents-block article.content-inner .content-flexbox .content-texts h3.content-title::before {
-  content: "";
-  height: 44px;
-  width: 3px;
-  background-color: #0D0D0D;
-  display: inline-block;
-  margin-right: 10px;
-  transform: translateY(4px);
+  border-left: 3px solid #0D0D0D;
+  padding-left: 10px;
 }
 
 main .contents-block article.content-inner .content-flexbox .content-texts p.content-text {
-  font-size: 16px;
   margin-top: 20px;
   line-height: 32px;
   animation: fadeIn-texts .6s ease .4s both;
@@ -509,12 +491,55 @@ main .contents-block article.content-inner:first-child {
   margin-top: 0;
 }
 
-main .contents-block article.content-inner:nth-of-type(2n) > .content-flexbox {
-  flex-direction: row-reverse;
+@media screen and (min-width: 1001px) {
+  main article.content-inner {
+    height: 60vh;
+  }
+  main article.content-inner .content-flexbox a.image-link {
+    width: 62.5%;
+  }
+  main article.content-inner .content-texts {
+    width: 37.5%;
+    padding: 230px 50px 0 50px;
+  }
+  main article.content-inner .content-texts h3.content-title {
+    font-size: 44px;
+    letter-spacing: 4px;
+  }
+  main article.content-inner .content-texts p.content-text {
+    font-size: 16px;
+  }
+  main article.content-inner:nth-of-type(2n) > .content-flexbox {
+    flex-direction: row-reverse;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  main article.content-inner {
+    height: 70vh;
+  }
+  main article.content-inner .content-flexbox {
+    flex-direction: column;
+  }
+  main article.content-inner .content-flexbox a.image-link {
+    width: 100%;
+  }
+  main article.content-inner .content-texts {
+    padding: 50px 0;
+  }
+  main article.content-inner .content-texts h3.content-title {
+    font-size: 36px;
+    letter-spacing: 3px;
+  }
+  main article.content-inner .content-texts p.content-text {
+    font-size: 14px;
+  }
+  main article.content-inner:nth-of-type(2n) > .content-flexbox {
+    flex-direction: column;
+  }
 }
 
 main .skills-block {
-  height: 100Vh;
   width: 100vw;
   justify-content: center;
   align-items: center;

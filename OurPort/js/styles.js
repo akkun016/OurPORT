@@ -36,7 +36,7 @@ $(function(){
   const icon = $(".mouth-icon > svg");
 
   const contentBlocks = document.querySelectorAll(".content-inner");
-  const contentsHeight = document.querySelectorAll(".content-inner").length * 500 + 2200;
+  const contentsHeight = document.querySelectorAll(".content-inner").length * 800 + 2200;
   $(window).on("scroll", function() {
     logo.toggleClass("sticky", window.scrollY > 0)
     nav.toggleClass("sticky", window.scrollY > 0);
@@ -58,10 +58,10 @@ $(function(){
   $("#menu-button-id").on("click", function() {
     if (parentClass.hasClass("clicked") == true) {
       parentClass.removeClass("clicked");
-      menuLists.css("transform", "translateX(260px)")
+      menuLists.css("transform", "translateX(0)")
     } else {
       parentClass.addClass("clicked");
-      menuLists.css("transform", "translateX(0)")
+      menuLists.css("transform", "translateX(-440px)")
     };
   })
 
