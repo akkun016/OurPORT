@@ -491,7 +491,7 @@ main .contents-block article.content-inner:first-child {
   margin-top: 0;
 }
 
-@media screen and (min-width: 1001px) {
+@media screen and (min-width: 901px) {
   main article.content-inner {
     height: 60vh;
   }
@@ -514,7 +514,7 @@ main .contents-block article.content-inner:first-child {
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   main article.content-inner {
     height: 70vh;
   }

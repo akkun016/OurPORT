@@ -396,7 +396,7 @@ main {
     }
   }
   // スクリーンサイズ1001px以上
-  @media screen and (min-width: 1001px) {
+  @media screen and (min-width: 901px) {
     article.content-inner {
       height: 60vh;
       .content-flexbox {
@@ -421,7 +421,7 @@ main {
     }
   }
     // スクリーンサイズ1001px以上
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 900px) {
     article.content-inner {
       height: 70vh;
       .content-flexbox {
