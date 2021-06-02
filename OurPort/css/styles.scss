@@ -6,6 +6,7 @@
 .wrapper {
   box-sizing: border-box;
   background-color: #ffffff;
+  position: relative;
 }
 
 // ボタンのリセット
@@ -382,7 +383,7 @@ main {
       padding-left: 400px;
       .skills-type{
         font-size: 45px;
-        border-left:black solid 2px ;
+        border-left:black solid 3px ;
         padding: 6px;
       }
       .skills-name{
@@ -395,6 +396,93 @@ main {
 }
 
 footer {
+  height: 33Vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  bottom: 0;
+  flex-direction: column;
+  .footer-box{
+    display: flex;
+    padding: 80px 0px 0px 180px;
+    font-size: 16px;
+    .contact{
+      color: #ffffff;
+    }
+    .footer-texter{
+      .footer-text:last-child{
+        margin-bottom:0 ;
+      }
+      .footer-text{
+        color: #ffffff;
+        margin-left: 80px;
+        margin-bottom:40px ;
+      }
+    }
+    .GitHub{
+      color: #ffffff;
+      margin-left: 282px;
+    }
+    .footer-http{
+      color: #ffffff;
+      margin-left: 80px;
+    }
+  }
+  .footer-icon{
+    display: flex;
+    padding: 40px 0px 0px 180px;
+    .footer-SOCIAL{
+      color: #ffffff;
+      font-size: 18px
+    }
+    .twitter-icon::before{
+      font-family: "Font Awesome 5 Brands";
+      content: '\f099';
+      color:#ffffff;
+      font-weight: 40px;
+      font-size: 40px;
+      margin-left: 90px;
+    }
+    .instagram-icon::before{
+      font-family: "Font Awesome 5 Brands";
+      content: '\f16d';
+      color:#ffffff;
+      font-weight: 40px;
+      font-size: 40px;
+      margin-left: 10px;
+    }
+  }
+  .footer-icon2{
+    position: relative;
+    .back{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      color: #ffffff;
+      position: absolute;
+      bottom: 10px;
+      right: 200px;
+      .angel-up-icon::before{
+        font-family: "Font Awesome 5 free";
+        content: '\f102';
+        color:#ffffff;
+        font-weight: 120px;
+        font-size: 120px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+  .class-copy{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    text-align: center;
+    justify-content: flex-end;
+    small{
+      color: #ffffffb7;
+      font-size: 14px;
+    }
+  }
 }
 
 .cursor {
