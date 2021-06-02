@@ -60,6 +60,7 @@ table {
   overflow: hidden;
   box-sizing: border-box;
   background-color: #ffffff;
+  position: relative;
 }
 
 button {
@@ -573,7 +574,9 @@ main .skills-block .skills {
 
 main .skills-block .skills .skills-type {
   font-size: 45px;
+
   border-left: #0D0D0D solid 4px;
+
   padding: 6px;
 }
 
@@ -581,6 +584,109 @@ main .skills-block .skills .skills-name {
   font-size: 35px;
   padding: 10px 0px 100px 0px;
   line-height: 60px;
+}
+
+footer {
+  height: 33Vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  bottom: 0;
+  flex-direction: column;
+}
+
+footer .footer-box {
+  display: flex;
+  padding: 80px 0px 0px 180px;
+  font-size: 16px;
+}
+
+footer .footer-box .contact {
+  color: #ffffff;
+}
+
+footer .footer-box .footer-texter .footer-text:last-child {
+  margin-bottom: 0;
+}
+
+footer .footer-box .footer-texter .footer-text {
+  color: #ffffff;
+  margin-left: 80px;
+  margin-bottom: 40px;
+}
+
+footer .footer-box .GitHub {
+  color: #ffffff;
+  margin-left: 282px;
+}
+
+footer .footer-box .footer-http {
+  color: #ffffff;
+  margin-left: 80px;
+}
+
+footer .footer-icon {
+  display: flex;
+  padding: 40px 0px 0px 180px;
+}
+
+footer .footer-icon .footer-SOCIAL {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+footer .footer-icon .twitter-icon::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f099';
+  color: #ffffff;
+  font-weight: 40px;
+  font-size: 40px;
+  margin-left: 90px;
+}
+
+footer .footer-icon .instagram-icon::before {
+  font-family: "Font Awesome 5 Brands";
+  content: '\f16d';
+  color: #ffffff;
+  font-weight: 40px;
+  font-size: 40px;
+  margin-left: 10px;
+}
+
+footer .footer-icon2 {
+  position: relative;
+}
+
+footer .footer-icon2 .back {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  bottom: 10px;
+  right: 200px;
+}
+
+footer .footer-icon2 .back .angel-up-icon::before {
+  font-family: "Font Awesome 5 free";
+  content: '\f102';
+  color: #ffffff;
+  font-weight: 120px;
+  font-size: 120px;
+  margin-bottom: 50px;
+}
+
+footer .class-copy {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  text-align: center;
+  justify-content: flex-end;
+}
+
+footer .class-copy small {
+  color: #ffffffb7;
+  font-size: 14px;
 }
 
 .cursor {
