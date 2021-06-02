@@ -15,6 +15,7 @@
   <div class="wrapper">
     <header>
       <h2 class="header-title">OurPORT</h2>
+      <div class="cover-block"></div>
       <nav>
         <label for="menu-button-id" class="menu-button">
           <span class="span1"></span>
@@ -23,17 +24,32 @@
           <button id="menu-button-id"></button>
         </label>
         <ul class="header-menus">
-          <li><button>TOP</button></li>
-          <li><button>ABOUT</button></li>
-          <li><button>MEMBER</button></li>
-          <li><button>CONTENTS</button></li>
-          <li><button>SKILLS</button></li>
+          <li><a href="#1">
+            TOP
+            <div class="bottom-line"></div>
+          </a></li>
+          <li><a href="#2">
+            ABOUT
+            <div class="bottom-line"></div>
+          </a></li>
+          <li><a href="#3">
+            MEMBER
+            <div class="bottom-line"></div>
+          </a></li>
+          <li><a href="#4">
+            CONTENTS
+            <div class="bottom-line"></div>
+          </a></li>
+          <li><a href="#5">
+            SKILLS
+            <div class="bottom-line"></div>
+          </a></li>
         </ul>
       </nav>
     </header>
   
     <main>
-      <section class="main-visual">
+      <section class="main-visual" id="1">
         <div class="container">
           <svg 
           class="svg-icon" 
@@ -88,7 +104,7 @@
 
         <div class="mouth-icon">
           <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-          width="30.000000pt" height="80.000000pt" viewBox="0 0 276.000000 930.000000"
+          viewBox="0 0 276.000000 930.000000"
           preserveAspectRatio="xMidYMid meet">
           <g transform="translate(0.000000,930.000000) scale(0.100000,-0.100000)"
           fill="#000000" stroke="none">
@@ -114,13 +130,13 @@
           </svg>
         </div>
       </section>
-      <section class="about-block">
+      <section class="about-block" id="2">
         <h2 class="title">About</h2>
         <span class="line"></span>
         <p>私たちのポートフォリオ</p>
         <p>私たちの活動へ向けて</p>
       </section>
-      <section class="member-block">
+      <section class="member-block" id="3">
         <div class="member-titlebox">
           <div class="member-title">Member</div>
         </div>
@@ -143,7 +159,7 @@
           </figcaption>
         </figure>
       </section>
-      <section class="contents-block">
+      <section class="contents-block" id="4">
         <div class="subtitle-box">
           <h2 class="subtitle">Contents</h2>
         </div>
@@ -152,7 +168,7 @@
           <article class="content-inner">
             <div class="content-flexbox">
               <a class="image-link" href="#">
-                <img class="content-image" src="./img/ポートフォリオ画像（OurPORT）.png" alt="PHOTO APP">
+                <img class="content-image" src="./img/OurPROT.png" alt="OurPORT">
                 <div class="fadeIn-black-back"></div>
               </a>
               <div class="content-texts">
@@ -171,7 +187,7 @@
           <article class="content-inner">
             <div class="content-flexbox">
               <a class="image-link" href="#">
-                <img class="content-image" src="./img/ログイン.jpg" alt="PHOTO APP">
+                <img class="content-image" src="./img/Photo.jpg" alt="PHOTO APP">
                 <div class="fadeIn-black-back"></div>
               </a>
               <div class="content-texts">
@@ -190,7 +206,7 @@
           <article class="content-inner">
             <div class="content-flexbox">
               <a class="image-link" href="#">
-                <img class="content-image" src="./img/401cf772386e2c05396f064b91cc01e4.jpg" alt="PHOTO APP">
+                <img class="content-image" src="./img/401cf772386e2c05396f064b91cc01e4.jpg" alt="フリマアプリ">
                 <div class="fadeIn-black-back"></div>
               </a>
               <div class="content-texts">
@@ -208,7 +224,7 @@
 
         </div>
       </section>
-      <section class="skills-block">
+      <section class="skills-block" id="5">
         <div class="skills-titlebox">
           <div class="skills-title">Skills</div>
           <span class="skills-line"></span>
@@ -222,7 +238,6 @@
           <P class="skills-name">Git / GitHub /Docker / AdobeXD</P>
         </div>
       </section>
-
     </main>
 
     <footer>

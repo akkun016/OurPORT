@@ -1,9 +1,10 @@
 @charset "utf-8";
 @import "reset";
 @import "color";
-
 // ラッパーの設定
 .wrapper {
+  width: 100vw;
+  overflow: hidden;
   box-sizing: border-box;
   background-color: #ffffff;
   position: relative;
@@ -52,6 +53,16 @@ header {
     transform: translateX(0);
     opacity: 1;
   }
+  .cover-block {
+    position: absolute;
+    top: 20px;
+    right: 8%;
+    transform: translateX(60px);
+    z-index: 8;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+  }
   nav {
     position: absolute;
     top: 20px;
@@ -68,6 +79,7 @@ header {
       display: block;
       position: relative;
       cursor: pointer;
+      z-index: 5;
       span {
         height: 1px;
         width: 30px;
@@ -78,20 +90,66 @@ header {
         position: absolute;
         top: 15px;
         left: 10px;
+        transition: 1s;
       }
       .span2 {
         position: absolute;
         top: 24px;
         left: 10px;
+        transition: 1s;
       }
       .span3 {
         position: absolute;
         top: 33px;
         left: 10px;
+        transition: 1s;
+      }
+    }
+    .menu-button.clicked {
+      .span1 {
+        transform: rotate(45deg) translate(6px, 7px);
+      }
+      .span2 {
+        transform: translateX(6px);
+        opacity: 0;
+      }
+      .span3 {
+        transform: rotate(-45deg) translate(6px, -7px);
       }
     }
     ul.header-menus {
-      display: none;
+      height: 120vh;
+      width: 440px;
+      background-color: $main-color;
+      position: fixed;
+      z-index: 3;
+      top: -20px;
+      left: 320px;
+      padding: 80px 0 0 60px;
+      transform: translateX(0);
+      transition: 1s;
+      li {
+        margin-top: 36px;
+        a {
+          font-size: 24px;
+          color: $base-color;
+          cursor: pointer;
+          text-decoration: none;
+          display: inline-block;
+          .bottom-line {
+            height: 2px;
+            width: 100%;
+            background-color: $base-color;
+            transition: .6s;
+            transform: scale(0, 1);
+          }
+        }
+        a:hover {
+          .bottom-line {
+            transform: scale(1, 1);
+          }
+        }
+      }
     }
   }
   nav.sticky {
@@ -137,6 +195,8 @@ main {
       transform: translateX(-50%);
       animation: icon-fadeIn .8s ease 3.8s both;
       svg {
+        width: 5vw;
+        height: 12vh;
         transition: .4s;
       }
       svg.sticky {
@@ -179,7 +239,6 @@ main {
     }
   }
   .member-block{
-    height: 100Vh;
     width: 100vw;
     justify-content: center;
     align-items: center;
@@ -200,7 +259,7 @@ main {
     .people{
       display: flex;
       justify-content: space-evenly;
-      padding-top: 50px;
+      padding-bottom: 100px;
       figcaption{
         width: 400PX;
       }
@@ -214,7 +273,7 @@ main {
       }
       .member-sentense{
         color:#ffffff;
-        font-size: 20px;
+        font-size: 16px;
         padding-top: 40px;
         line-height: 60px;
       }
@@ -228,16 +287,13 @@ main {
     width: 100vw;
     padding: 100px 6%;
     article.content-inner {
-      height: 500px;
       width: 100%;
       margin-top: 120px;
       .content-flexbox {
-        height: 100%;
         width: 100%;
         display: none;
         a.image-link {
-          height: 100%;
-          width: 62.5%;
+          height: 50%;
           overflow: hidden;
           position: relative;
           animation: border-add .1s ease 1s both;
@@ -247,7 +303,6 @@ main {
             }
           }
           .content-image {
-            height: 100%;
             width: 100%;
             object-fit: cover;
             opacity: 0;
@@ -266,24 +321,12 @@ main {
           }
         }
         .content-texts {
-          width: 37.5%;
-          padding: 230px 50px 0 50px;
           h3.content-title {
-            font-size: 44px;
-            letter-spacing: 4px;
             animation: fadeIn-texts .6s ease both;
-          }
-          h3.content-title::before {
-            content: "";
-            height: 44px;
-            width: 3px;
-            background-color: $main-color;
-            display: inline-block;
-            margin-right: 10px;
-            transform: translateY(4px);
+            border-left: 3px solid $main-color;
+            padding-left: 10px;
           }
           p.content-text {
-            font-size: 16px;
             margin-top: 20px;
             line-height: 32px;
             animation: fadeIn-texts .6s ease .4s both;
@@ -352,12 +395,58 @@ main {
     article.content-inner:first-child {
       margin-top: 0;
     }
+  }
+  // スクリーンサイズ1001px以上
+  @media screen and (min-width: 901px) {
+    article.content-inner {
+      height: 60vh;
+      .content-flexbox {
+        a.image-link {
+          width: 62.5%;
+        }
+      }
+      .content-texts {
+        width: 37.5%;
+        padding: 230px 50px 0 50px;
+        h3.content-title {
+          font-size: 44px;
+          letter-spacing: 4px;
+        }
+        p.content-text {
+          font-size: 16px;
+        }
+      }
+    }
     article.content-inner:nth-of-type(2n) > .content-flexbox {
       flex-direction: row-reverse;
     }
   }
+    // スクリーンサイズ1001px以上
+  @media screen and (max-width: 900px) {
+    article.content-inner {
+      height: 70vh;
+      .content-flexbox {
+        flex-direction: column;
+        a.image-link {
+          width: 100%;
+        }
+      }
+      .content-texts {
+        padding: 50px 0;
+        h3.content-title {
+          font-size: 36px;
+          letter-spacing: 3px;
+        }
+        p.content-text {
+          font-size: 14px;
+        }
+      }
+    }
+    article.content-inner:nth-of-type(2n) > .content-flexbox {
+      flex-direction: column;
+    }
+  }
   .skills-block {
-    height: 100Vh;
     width: 100vw;
     justify-content: center;
     align-items: center;
@@ -375,15 +464,18 @@ main {
       .skills-line{
         height: 5px;
         width: 250px;
-        background-color: black;
+        background-color: $main-color;
         margin-bottom: 40px;
       }
     }
     .skills{
-      padding-left: 400px;
+      width: 55vw;
+      margin: 0 auto;
       .skills-type{
         font-size: 45px;
-        border-left:black solid 3px ;
+
+        border-left:$main-color solid 4px ;
+
         padding: 6px;
       }
       .skills-name{

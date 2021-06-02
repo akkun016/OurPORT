@@ -56,6 +56,8 @@ table {
 }
 
 .wrapper {
+  width: 100vw;
+  overflow: hidden;
   box-sizing: border-box;
   background-color: #ffffff;
   position: relative;
@@ -107,6 +109,17 @@ header h2.header-title.sticky {
   opacity: 1;
 }
 
+header .cover-block {
+  position: absolute;
+  top: 20px;
+  right: 8%;
+  transform: translateX(60px);
+  z-index: 8;
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+}
+
 header nav {
   position: absolute;
   top: 20px;
@@ -125,6 +138,7 @@ header nav .menu-button {
   display: block;
   position: relative;
   cursor: pointer;
+  z-index: 5;
 }
 
 header nav .menu-button span {
@@ -138,22 +152,71 @@ header nav .menu-button .span1 {
   position: absolute;
   top: 15px;
   left: 10px;
+  transition: 1s;
 }
 
 header nav .menu-button .span2 {
   position: absolute;
   top: 24px;
   left: 10px;
+  transition: 1s;
 }
 
 header nav .menu-button .span3 {
   position: absolute;
   top: 33px;
   left: 10px;
+  transition: 1s;
+}
+
+header nav .menu-button.clicked .span1 {
+  transform: rotate(45deg) translate(6px, 7px);
+}
+
+header nav .menu-button.clicked .span2 {
+  transform: translateX(6px);
+  opacity: 0;
+}
+
+header nav .menu-button.clicked .span3 {
+  transform: rotate(-45deg) translate(6px, -7px);
 }
 
 header nav ul.header-menus {
-  display: none;
+  height: 120vh;
+  width: 440px;
+  background-color: #0D0D0D;
+  position: fixed;
+  z-index: 3;
+  top: -20px;
+  left: 320px;
+  padding: 80px 0 0 60px;
+  transform: translateX(0);
+  transition: 1s;
+}
+
+header nav ul.header-menus li {
+  margin-top: 36px;
+}
+
+header nav ul.header-menus li a {
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+header nav ul.header-menus li a .bottom-line {
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  transition: .6s;
+  transform: scale(0, 1);
+}
+
+header nav ul.header-menus li a:hover .bottom-line {
+  transform: scale(1, 1);
 }
 
 header nav.sticky {
@@ -205,6 +268,8 @@ main .main-visual .mouth-icon {
 }
 
 main .main-visual .mouth-icon svg {
+  width: 5vw;
+  height: 12vh;
   transition: .4s;
 }
 
@@ -251,7 +316,6 @@ main .about-block p {
 }
 
 main .member-block {
-  height: 100Vh;
   width: 100vw;
   justify-content: center;
   align-items: center;
@@ -276,7 +340,7 @@ main .member-block .member-titlebox .member-title {
 main .member-block .people {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 main .member-block .people figcaption {
@@ -293,7 +357,7 @@ main .member-block .member-name {
 
 main .member-block .member-sentense {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 16px;
   padding-top: 40px;
   line-height: 60px;
 }
@@ -309,20 +373,17 @@ main .contents-block {
 }
 
 main .contents-block article.content-inner {
-  height: 500px;
   width: 100%;
   margin-top: 120px;
 }
 
 main .contents-block article.content-inner .content-flexbox {
-  height: 100%;
   width: 100%;
   display: none;
 }
 
 main .contents-block article.content-inner .content-flexbox a.image-link {
-  height: 100%;
-  width: 62.5%;
+  height: 50%;
   overflow: hidden;
   position: relative;
   animation: border-add .1s ease 1s both;
@@ -335,7 +396,6 @@ main .contents-block article.content-inner .content-flexbox a.image-link {
 }
 
 main .contents-block article.content-inner .content-flexbox a.image-link .content-image {
-  height: 100%;
   width: 100%;
   object-fit: cover;
   opacity: 0;
@@ -353,29 +413,13 @@ main .contents-block article.content-inner .content-flexbox .image-link:hover .c
   transform: scale(1.06);
 }
 
-main .contents-block article.content-inner .content-flexbox .content-texts {
-  width: 37.5%;
-  padding: 230px 50px 0 50px;
-}
-
 main .contents-block article.content-inner .content-flexbox .content-texts h3.content-title {
-  font-size: 44px;
-  letter-spacing: 4px;
   animation: fadeIn-texts .6s ease both;
-}
-
-main .contents-block article.content-inner .content-flexbox .content-texts h3.content-title::before {
-  content: "";
-  height: 44px;
-  width: 3px;
-  background-color: #0D0D0D;
-  display: inline-block;
-  margin-right: 10px;
-  transform: translateY(4px);
+  border-left: 3px solid #0D0D0D;
+  padding-left: 10px;
 }
 
 main .contents-block article.content-inner .content-flexbox .content-texts p.content-text {
-  font-size: 16px;
   margin-top: 20px;
   line-height: 32px;
   animation: fadeIn-texts .6s ease .4s both;
@@ -448,12 +492,55 @@ main .contents-block article.content-inner:first-child {
   margin-top: 0;
 }
 
-main .contents-block article.content-inner:nth-of-type(2n) > .content-flexbox {
-  flex-direction: row-reverse;
+@media screen and (min-width: 901px) {
+  main article.content-inner {
+    height: 60vh;
+  }
+  main article.content-inner .content-flexbox a.image-link {
+    width: 62.5%;
+  }
+  main article.content-inner .content-texts {
+    width: 37.5%;
+    padding: 230px 50px 0 50px;
+  }
+  main article.content-inner .content-texts h3.content-title {
+    font-size: 44px;
+    letter-spacing: 4px;
+  }
+  main article.content-inner .content-texts p.content-text {
+    font-size: 16px;
+  }
+  main article.content-inner:nth-of-type(2n) > .content-flexbox {
+    flex-direction: row-reverse;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main article.content-inner {
+    height: 70vh;
+  }
+  main article.content-inner .content-flexbox {
+    flex-direction: column;
+  }
+  main article.content-inner .content-flexbox a.image-link {
+    width: 100%;
+  }
+  main article.content-inner .content-texts {
+    padding: 50px 0;
+  }
+  main article.content-inner .content-texts h3.content-title {
+    font-size: 36px;
+    letter-spacing: 3px;
+  }
+  main article.content-inner .content-texts p.content-text {
+    font-size: 14px;
+  }
+  main article.content-inner:nth-of-type(2n) > .content-flexbox {
+    flex-direction: column;
+  }
 }
 
 main .skills-block {
-  height: 100Vh;
   width: 100vw;
   justify-content: center;
   align-items: center;
@@ -476,17 +563,20 @@ main .skills-block .skills-titlebox .skills-title {
 main .skills-block .skills-titlebox .skills-line {
   height: 5px;
   width: 250px;
-  background-color: black;
+  background-color: #0D0D0D;
   margin-bottom: 40px;
 }
 
 main .skills-block .skills {
-  padding-left: 400px;
+  width: 55vw;
+  margin: 0 auto;
 }
 
 main .skills-block .skills .skills-type {
   font-size: 45px;
-  border-left: black solid 3px;
+
+  border-left: #0D0D0D solid 4px;
+
   padding: 6px;
 }
 
