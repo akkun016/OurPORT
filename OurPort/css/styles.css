@@ -74,14 +74,54 @@ button {
 .subtitle-box {
   display: flex;
   justify-content: center;
-  margin-bottom: 140px;
 }
 
 .subtitle-box h2.subtitle {
-  font-size: 60px;
   padding: 4px;
-  transform: translateX(20px);
   border-bottom: solid 5px #0D0D0D;
+}
+
+.subtitle-box.bottom-none {
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 900px) {
+  .subtitle-box {
+    margin-bottom: 140px;
+  }
+  .subtitle-box h2.subtitle {
+    font-size: 60px;
+  }
+  .about-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 899px) {
+  .subtitle-box {
+    margin-bottom: 120px;
+  }
+  .subtitle-box h2.subtitle {
+    font-size: 48px;
+  }
+  .about-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .subtitle-box {
+    margin-bottom: 100px;
+  }
+  .subtitle-box h2.subtitle {
+    font-size: 36px;
+  }
+  .about-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
 }
 
 header {
@@ -297,21 +337,7 @@ main .about-block {
   flex-direction: column;
 }
 
-main .about-block .title {
-  font-size: 60px;
-  margin-bottom: 4px;
-}
-
-main .about-block .line {
-  height: 5px;
-  width: 200px;
-  background-color: black;
-  margin-bottom: 40px;
-}
-
 main .about-block p {
-  font-size: 24px;
-  margin-bottom: 20px;
   font-family: 'Hiragino Kaku Gothic ProN';
 }
 
@@ -374,7 +400,6 @@ main .contents-block {
 
 main .contents-block article.content-inner {
   width: 100%;
-  margin-top: 120px;
 }
 
 main .contents-block article.content-inner .content-flexbox {
@@ -495,6 +520,7 @@ main .contents-block article.content-inner:first-child {
 @media screen and (min-width: 901px) {
   main article.content-inner {
     height: 60vh;
+    margin-top: 120px;
   }
   main article.content-inner .content-flexbox a.image-link {
     width: 62.5%;
@@ -518,6 +544,7 @@ main .contents-block article.content-inner:first-child {
 @media screen and (max-width: 900px) {
   main article.content-inner {
     height: 70vh;
+    margin-top: 120px;
   }
   main article.content-inner .content-flexbox {
     flex-direction: column;
@@ -529,7 +556,7 @@ main .contents-block article.content-inner:first-child {
     padding: 50px 0;
   }
   main article.content-inner .content-texts h3.content-title {
-    font-size: 36px;
+    font-size: 28px;
     letter-spacing: 3px;
   }
   main article.content-inner .content-texts p.content-text {
@@ -540,31 +567,16 @@ main .contents-block article.content-inner:first-child {
   }
 }
 
+@media screen and (max-width: 600px) {
+  main article.content-inner {
+    margin-top: 0;
+  }
+}
+
 main .skills-block {
   width: 100vw;
   justify-content: center;
   align-items: center;
-}
-
-main .skills-block .skills-titlebox {
-  display: flex;
-  justify-content: center;
-  padding: 100px 0px 90px 0px;
-  flex-direction: column;
-  align-items: center;
-}
-
-main .skills-block .skills-titlebox .skills-title {
-  text-align: center;
-  font-size: 70px;
-  padding: 4px;
-}
-
-main .skills-block .skills-titlebox .skills-line {
-  height: 5px;
-  width: 250px;
-  background-color: #0D0D0D;
-  margin-bottom: 40px;
 }
 
 main .skills-block .skills {
