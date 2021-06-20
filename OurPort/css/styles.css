@@ -259,6 +259,24 @@ header nav ul.header-menus li a:hover .bottom-line {
   transform: scale(1, 1);
 }
 
+@media screen and (min-width: 480px) and (max-width: 899px) {
+  header nav ul.header-menus li {
+    margin-top: 34px;
+  }
+  header nav ul.header-menus li a {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  header nav ul.header-menus li {
+    margin-top: 30px;
+  }
+  header nav ul.header-menus li a {
+    font-size: 18px;
+  }
+}
+
 header nav.sticky {
   transform: translateX(0);
   opacity: 1;

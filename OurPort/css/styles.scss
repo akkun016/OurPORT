@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import "reset";
 @import "color";
-// ラッパーの設定
+// ラッパーの設定============================
 .wrapper {
   width: 100vw;
   overflow: hidden;
@@ -9,6 +9,8 @@
   background-color: #ffffff;
   position: relative;
 }
+// ========================================
+
 
 // ボタンのリセット
 button{
@@ -18,14 +20,14 @@ button{
   padding: 0;
   appearance: none;
 }
+// ========================================
+
 
 // サブタイトル
 .subtitle-box{
   display: flex;
   justify-content: center;
-  // margin-bottom: 140px;
   h2.subtitle {
-    // font-size: 60px;
     padding: 4px;
     border-bottom: solid 5px $main-color;
   }
@@ -34,7 +36,10 @@ button{
 .subtitle-box.bottom-none {
   margin-bottom: 40px;
 }
+// ========================================
 
+
+// メディアクエリ============================
 @media screen and (min-width: 900px) {
   .subtitle-box {
     margin-bottom: 140px;
@@ -76,6 +81,8 @@ button{
     margin-bottom: 20px;
   }
 }
+// ========================================
+
 
 header {
   width: 100vw;
@@ -195,6 +202,22 @@ header {
           }
         }
       }
+      @media screen and(min-width:480px) and (max-width:899px) {
+        li {
+          margin-top: 34px;
+          a {
+            font-size: 22px;
+          }
+        }
+      }
+      @media screen and (max-width:479px) {
+        li {
+          margin-top: 30px;
+          a {
+            font-size: 18px;
+          }
+        }
+      }
     }
   }
   nav.sticky {
@@ -202,6 +225,7 @@ header {
     opacity: 1;
   }
 }
+
 
 main {
   .main-visual {
@@ -507,6 +531,7 @@ main {
   }
 }
 
+
 footer {
   height: 33Vh;
   width: 100vw;
@@ -597,6 +622,8 @@ footer {
   }
 }
 
+
+// カーソルデザイン=========================
 .cursor {
   position: fixed;
   top: 0;
@@ -611,8 +638,10 @@ footer {
   pointer-events: none;
   mix-blend-mode: difference;
 }
+// ========================================
 
-// フェードインアニメーション
+
+// フェードインアニメーション==================
 .fadeIn-black-back {
   height: 100%;
   width: 100%;
@@ -622,8 +651,10 @@ footer {
   z-index: 2;
   animation: fadeIn-contents 2s ease both;
 }
+// ========================================
 
-// 左から表示、右へ非表示
+
+// 左から表示、右へ非表示======================
 @keyframes fadeIn-contents {
   0% {
     transform: scale(0,1);
@@ -642,7 +673,10 @@ footer {
     transform-origin: right;
   }
 }
-// テキストの表示
+// ========================================
+
+
+// テキストの表示=============================
 @keyframes fadeIn-texts {
   0% {
     transform: translateX(-20%);
@@ -653,3 +687,4 @@ footer {
     opacity: 1;
   }
 }
+// ========================================
