@@ -1,18 +1,20 @@
 $(function(){
   // マウスカーソルのエフェクト
-  let cursor = $(".cursor");
-  $(document).on("mousemove", function(e) {
-    let mousemove_left = e.clientX - 8;
-    let mousemove_top = e.clientY - 8;
+  if (!navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+    let cursor = $(".cursor");
+    $(document).on("mousemove", function(e) {
+      let mousemove_left = e.clientX - 8;
+      let mousemove_top = e.clientY - 8;
 
-    cursor.css({"transform":`translate(${mousemove_left + "px"}, ${mousemove_top + "px"})`, "opacity": "1"});
-  });
+      cursor.css({"transform":`translate(${mousemove_left + "px"}, ${mousemove_top + "px"})`, "opacity": "1"});
+    });
 
-  $("a, label, button, .container").hover(function() {
-    cursor.css({"height":"80px", "width":"80px", "top":"-30px", "left":"-30px"})
-  }, function(){
-    cursor.css({"height":"16px", "width":"16px", "top":"0", "left":"0"})
-  });
+    $("a, label, button, .container").hover(function() {
+      cursor.css({"height":"80px", "width":"80px", "top":"-30px", "left":"-30px"})
+    }, function(){
+      cursor.css({"height":"16px", "width":"16px", "top":"0", "left":"0"})
+    });
+  }
 
   // svgアニメーションの設定
   const anime = () =>

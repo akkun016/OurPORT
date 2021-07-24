@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import "reset";
 @import "color";
-// ラッパーの設定
+// ラッパーの設定============================
 .wrapper {
   width: 100vw;
   overflow: hidden;
@@ -9,6 +9,8 @@
   background-color: #ffffff;
   position: relative;
 }
+// ========================================
+
 
 // ボタンのリセット
 button{
@@ -18,19 +20,69 @@ button{
   padding: 0;
   appearance: none;
 }
+// ========================================
+
 
 // サブタイトル
 .subtitle-box{
   display: flex;
   justify-content: center;
-  margin-bottom: 140px;
   h2.subtitle {
-    font-size: 60px;
     padding: 4px;
-    transform: translateX(20px);
     border-bottom: solid 5px $main-color;
   }
 }
+
+.subtitle-box.bottom-none {
+  margin-bottom: 40px;
+}
+// ========================================
+
+
+// メディアクエリ============================
+@media screen and (min-width: 900px) {
+  .subtitle-box {
+    margin-bottom: 140px;
+    h2.subtitle {
+      font-size: 60px;
+    }
+  }
+
+  .about-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width:480px) and (max-width:899px) {
+  .subtitle-box {
+    margin-bottom: 120px;
+    h2.subtitle {
+      font-size: 48px;
+    }
+  }
+
+  .about-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width:479px) {
+  .subtitle-box {
+    margin-bottom: 100px;
+    h2.subtitle {
+      font-size: 36px;
+    }
+  }
+
+  .about-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
+// ========================================
+
 
 header {
   width: 100vw;
@@ -150,6 +202,22 @@ header {
           }
         }
       }
+      @media screen and(min-width:480px) and (max-width:899px) {
+        li {
+          margin-top: 34px;
+          a {
+            font-size: 22px;
+          }
+        }
+      }
+      @media screen and (max-width:479px) {
+        li {
+          margin-top: 30px;
+          a {
+            font-size: 18px;
+          }
+        }
+      }
     }
   }
   nav.sticky {
@@ -157,6 +225,7 @@ header {
     opacity: 1;
   }
 }
+
 
 main {
   .main-visual {
@@ -234,8 +303,6 @@ main {
       margin-bottom: 40px;
     }
     p{
-      font-size: 24px;
-      margin-bottom: 20px;
       font-family: 'Hiragino Kaku Gothic ProN';
     }
   }
@@ -249,7 +316,6 @@ main {
       transform: scale(1);
     }
   }
-
   .member-block{
     width: 100vw;
     justify-content: center;
@@ -319,7 +385,6 @@ main {
     padding: 100px 6%;
     article.content-inner {
       width: 100%;
-      margin-top: 120px;
       .content-flexbox {
         width: 100%;
         display: none;
@@ -427,10 +492,10 @@ main {
       margin-top: 0;
     }
   }
-  // スクリーンサイズ1001px以上
   @media screen and (min-width: 901px) {
     article.content-inner {
       height: 60vh;
+      margin-top: 120px;
       .content-flexbox {
         a.image-link {
           width: 62.5%;
@@ -452,10 +517,10 @@ main {
       flex-direction: row-reverse;
     }
   }
-    // スクリーンサイズ1001px以上
   @media screen and (max-width: 900px) {
     article.content-inner {
       height: 70vh;
+      margin-top: 120px;
       .content-flexbox {
         flex-direction: column;
         a.image-link {
@@ -465,7 +530,7 @@ main {
       .content-texts {
         padding: 50px 0;
         h3.content-title {
-          font-size: 36px;
+          font-size: 28px;
           letter-spacing: 3px;
         }
         p.content-text {
@@ -477,6 +542,13 @@ main {
       flex-direction: column;
     }
   }
+
+  @media screen and (max-width: 600px) {
+    article.content-inner {
+      margin-top: 0;
+    }
+  }
+  
   .skills-block {
     width: 100vw;
     justify-content: center;
@@ -526,6 +598,7 @@ main {
     opacity: 1;
   }
 }
+
 
 footer {
   height: 33Vh;
@@ -697,6 +770,8 @@ footer {
   }
 }
 
+
+// カーソルデザイン=========================
 .cursor {
   position: fixed;
   top: 0;
@@ -711,8 +786,10 @@ footer {
   pointer-events: none;
   mix-blend-mode: difference;
 }
+// ========================================
 
-// フェードインアニメーション
+
+// フェードインアニメーション==================
 .fadeIn-black-back {
   height: 100%;
   width: 100%;
@@ -722,8 +799,10 @@ footer {
   z-index: 2;
   animation: fadeIn-contents 2s ease both;
 }
+// ========================================
 
-// 左から表示、右へ非表示
+
+// 左から表示、右へ非表示======================
 @keyframes fadeIn-contents {
   0% {
     transform: scale(0,1);
@@ -742,7 +821,10 @@ footer {
     transform-origin: right;
   }
 }
-// テキストの表示
+// ========================================
+
+
+// テキストの表示=============================
 @keyframes fadeIn-texts {
   0% {
     transform: translateX(-20%);
@@ -753,3 +835,4 @@ footer {
     opacity: 1;
   }
 }
+// ========================================
