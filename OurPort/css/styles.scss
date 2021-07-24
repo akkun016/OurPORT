@@ -291,11 +291,31 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+    .title{
+      font-size: 60px;
+      margin-bottom: 4px;
+    }
+    .line{
+      height: 5px;
+      width: 200px;
+      background-color: black;
+      margin-bottom: 40px;
+    }
     p{
       font-family: 'Hiragino Kaku Gothic ProN';
     }
   }
-
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
   .member-block{
     width: 100vw;
     justify-content: center;
@@ -312,6 +332,7 @@ main {
         font-size: 60px;
         padding:4px;
         border-bottom:$base-color solid 4px ;
+        animation: fadeIn 2.5s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
       }
     }
     .people{
@@ -321,24 +342,42 @@ main {
       figcaption{
         width: 400PX;
       }
-    }
       .member-name{
         color:#ffffff;
         font-size: 40px;
         letter-spacing: 0.06em;
         border-left:$base-color solid 4px ;
         padding: 6px;
+        animation: fadeIn 2.5s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+        animation-delay: 1s;
       }
       .member-sentense{
         color:#ffffff;
         font-size: 16px;
         padding-top: 40px;
         line-height: 60px;
+        animation: fadeIn 2.5s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+        animation-delay: 2s;
       }
       .under{
         text-decoration: underline;
         color: #ffffff;
       }
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .people{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   .contents-block {
@@ -514,6 +553,25 @@ main {
     width: 100vw;
     justify-content: center;
     align-items: center;
+    .skills-titlebox{
+      display: flex;
+      justify-content: center;
+      padding: 100px 0px 90px 0px;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 3.5s ease 1s none;
+      .skills-title{
+        text-align: center;
+        font-size: 70px;
+        padding:4px;
+      }
+      .skills-line{
+        height: 5px;
+        width: 250px;
+        background-color: $main-color;
+        margin-bottom: 40px;
+      }
+    }
     .skills{
       width: 55vw;
       margin: 0 auto;
@@ -521,13 +579,23 @@ main {
         font-size: 45px;
         border-left:$main-color solid 4px ;
         padding: 6px;
+        animation: fadeIn 2.5s ease 1s both;
       }
       .skills-name{
         font-size: 35px;
         padding: 10px 0px 100px 0px;
         line-height: 60px;
+        animation: fadeIn 2.5s ease 2s both;
       }
     }
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -535,77 +603,109 @@ main {
 footer {
   height: 33Vh;
   width: 100vw;
-  background-color: black;
-  display: flex;
-  bottom: 0;
-  flex-direction: column;
-  .footer-box{
+  // background-color: black;
+  .footer-inner{
     display: flex;
-    padding: 80px 0px 0px 180px;
-    font-size: 16px;
-    .contact{
-      color: #ffffff;
-    }
-    .footer-texter{
-      .footer-text:last-child{
-        margin-bottom:0 ;
-      }
-      .footer-text{
-        color: #ffffff;
-        margin-left: 80px;
-        margin-bottom:40px ;
-      }
-    }
-    .GitHub{
-      color: #ffffff;
-      margin-left: 282px;
-    }
-    .footer-http{
-      color: #ffffff;
-      margin-left: 80px;
-    }
-  }
-  .footer-icon{
-    display: flex;
-    padding: 40px 0px 0px 180px;
-    .footer-SOCIAL{
-      color: #ffffff;
-      font-size: 18px
-    }
-    .twitter-icon::before{
-      font-family: "Font Awesome 5 Brands";
-      content: '\f099';
-      color:#ffffff;
-      font-weight: 40px;
-      font-size: 40px;
-      margin-left: 90px;
-    }
-    .instagram-icon::before{
-      font-family: "Font Awesome 5 Brands";
-      content: '\f16d';
-      color:#ffffff;
-      font-weight: 40px;
-      font-size: 40px;
-      margin-left: 10px;
-    }
-  }
-  .footer-icon2{
-    position: relative;
-    .back{
-      display: flex;
+    width: 100vw;
+    height: 100%;
+    background-color: black;
+    margin: 0 auto;
+    .footer-contents-left{
+      background: black;
+      padding: 80px 0px;
+      font-size: 16px;
       flex-direction: column;
-      text-align: center;
-      color: #ffffff;
-      position: absolute;
-      bottom: 10px;
-      right: 200px;
-      .angel-up-icon::before{
-        font-family: "Font Awesome 5 free";
-        content: '\f102';
-        color:#ffffff;
-        font-weight: 120px;
-        font-size: 120px;
-        margin-bottom: 50px;
+      .footer-content-1 {
+        display: flex;
+        justify-content: center;
+        .contact{
+          width: 100px;
+          color: #ffffff;
+        }
+        .footer-texter{
+          width: 300px;
+          margin-bottom: 50px;
+          .footer-text:last-child{
+            margin-bottom:0 ;
+          }
+          .footer-text{
+            color: #ffffff;
+            margin-left: 80px;
+            margin-bottom:40px ;
+          }
+        }
+      }
+      .footer-content-2 {
+        display: flex;
+        justify-content: center;
+        .footer-SOCIAL{
+          width: 100px;
+          color: #ffffff;
+          font-size: 18px;
+        }
+        .list-items {
+          width: 300px;
+        }
+        .twitter-icon::before{
+          font-family: "Font Awesome 5 Brands";
+          content: '\f099';
+          color:#ffffff;
+          font-weight: 40px;
+          font-size: 40px;
+          margin-left: 90px;
+          animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
+          background:  no-repeat center center / 60px auto;
+          display: inline-block;
+          transition: 1.5s ease-in-out;
+        }
+        .instagram-icon::before{
+          font-family: "Font Awesome 5 Brands";
+          content: '\f16d';
+          color:#ffffff;
+          font-weight: 40px;
+          font-size: 40px;
+          margin-left: 10px;
+          animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
+          background:  no-repeat center center / 60px auto;
+          display: inline-block;
+          transition: 1.5s ease-in-out;
+        }
+      }
+    }
+    .footer-contents-middle{
+      background: black;
+      padding: 80px 0px;
+      display: flex;
+      justify-content: center;
+      .GitHub{
+        width: 100px;
+        color: #ffffff;
+        }
+      .footer-http{
+        width: 300px;
+        color: #ffffff;
+        padding-left: 80px;
+      }
+    }
+    .footer-contents-right{
+      background: black;
+      position: relative;
+      .back{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: #ffffff;
+        position: absolute;
+        bottom: 80px;
+        right: 200px;
+        .angel-up-icon::before{
+          font-family: "Font Awesome 5 free";
+          content: '\f102';
+          color:#ffffff;
+          font-weight: 120px;
+          font-size: 120px;
+          margin-bottom: 50px;
+        }
       }
     }
   }
@@ -619,6 +719,54 @@ footer {
       color: #ffffffb7;
       font-size: 14px;
     }
+  }
+}
+@media screen and (max-width: 1100px) {
+  footer{
+    height: 70vh;
+  }
+  .footer-inner{
+    flex-direction: column;
+    .footer-contents-left{
+      height: 40%;
+      width: 100%;
+    }
+    .footer-contents-middle{
+      height: 40%;
+      width: 100%;
+    }
+    .footer-contents-right{
+      height: 20%;
+      width: 100%;
+      position: relative;
+      .back{
+        position: absolute;
+        bottom: 80px;
+        left: 200px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1101px){
+  .footer-contents-left{
+    width: 33.3%;
+  }
+  .footer-contents-middle{
+    width: 33.3%;
+  }
+  .footer-contents-right{
+    width: 33.3%;
+  }
+}
+@keyframes fuwafuwa {
+  0% {
+    transform:translate(0, 0) rotate(-7deg);
+  }
+  50% {
+    transform:translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(7deg);
   }
 }
 
